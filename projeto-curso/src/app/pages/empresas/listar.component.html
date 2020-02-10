@@ -1,0 +1,27 @@
+<hr>
+<po-container class="po-lg-12 containerHome">
+    <div class="centerContent">
+        <po-avatar p-size="md" p-src="\assets\empresa-icon.png">
+        </po-avatar>
+        <h1>Lista de Empresas cadastradas</h1>
+    </div>
+    <po-divider></po-divider>
+    <div class="po-row">
+        <div class="po-md-11">
+
+        </div>
+        <po-button class="po-md-1 btnCriar" p-label="Criar" routerLink="/empresas/criar">
+        </po-button>
+    </div>
+    <hr>
+    <po-table p-container p-height="400" p-sort="true" p-striped="true" [p-columns]="columns" [p-items]="data" [p-max-columns]="5">
+    </po-table>
+    <hr>
+    <div class="po-row">
+        <div class="po-md-11">
+
+        </div>
+        <po-button class="po-md-1 btnCriar" p-label="Voltar" routerLink="/">
+        </po-button>
+    </div>
+</po-container>

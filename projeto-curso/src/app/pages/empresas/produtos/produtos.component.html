@@ -1,0 +1,18 @@
+<hr>
+<po-container class="po-lg-12 containerHome">
+    <h1>Produtos Cadastrados:</h1>
+    <po-divider></po-divider>
+    <div class="">
+        <div class="po-md-2">
+            <po-dynamic-form [p-fields]=" fields " [p-value]="empresa ">
+            </po-dynamic-form>
+        </div>
+    </div>
+    <div class="po-md-12">
+        <div class="po-md-4">
+            <po-divider></po-divider>
+            <po-grid [p-row-actions]="rowActions" [p-data]="dataProdutos" [p-columns]="columns">
+            </po-grid>
+        </div>
+    </div>
+</po-container>

@@ -1,0 +1,46 @@
+<hr>
+<po-container class="po-lg-12 containerHome">
+    <div class="centerContent">
+        <po-avatar p-size="md" p-src="\assets\gerenciar-icon.png">
+        </po-avatar>
+        <h1>Adicionar Produtos</h1>
+    </div>
+    <po-divider></po-divider>
+    <div class="po-md-2">
+        <po-dynamic-form [p-fields]=" fields " [p-value]="empresa ">
+        </po-dynamic-form>
+    </div>
+    <div class="po-md-3">
+        <po-select #select name="select" p-label="Selecione um produto" [p-options]="optionsProdutos">
+        </po-select>
+    </div>
+    <div class="po-md-1">
+        <hr>
+        <po-button p-label="Adicionar" (p-click)="adicionarProduto(select.selectedValue)">
+        </po-button>
+    </div>
+    <div class="po-md-1">
+        <hr>
+        <po-button p-label="Voltar" (p-click)="voltarListaEmpresas()">
+        </po-button>
+    </div>
+    <div>
+        <div class="loader" [hidden]="isHideLoading">
+            <div class="imgLoader">
+                <img src="../../../../assets/dragon-loading-gif.gif" alt="Loading" style="border-radius: 5%">
+                <div class="textLoader">
+                    <h3>Porfavor aguarde carregar...</h3>
+                </div>
+            </div>
+        </div>
+        <!-- <po-loading-overlay [hidden]="isHideLoading" p-text="Carregando, não deve demorar..."></po-loading-overlay> -->
+    </div>
+    <div class="po-md-12">
+        <div class="po-md-4">
+            <po-divider></po-divider>
+            <po-grid [p-row-actions]="rowActions" [p-data]="dataProdutos" [p-columns]="columns">
+            </po-grid>
+        </div>
+    </div>
+
+</po-container>

@@ -1,0 +1,33 @@
+<hr>
+<po-container class="po-lg-12 containerHome">
+    <div class="centerContent">
+        <po-avatar p-size="md" p-src="\assets\empresa-icon.png">
+        </po-avatar>
+        <h1>Editar empresa</h1>
+    </div>
+    <po-divider></po-divider>
+    <div class="centerContent">
+        <po-dynamic-form #dynamicForm p-auto-focus="name" [p-fields]="fields" [p-value]="empresa">
+            <input type="hidden" name="id" id="id" value="{{idEmpresa}}">
+        </po-dynamic-form>
+    </div>
+    <hr>
+    <div class="po-row">
+        <po-button class="po-md-1" p-label="Voltar" routerLink="/empresas">
+        </po-button>
+        <div class="po-md-7"></div>
+        <po-button class="po-md-1" p-label="Salvar" (p-click)="editarEmpresa(dynamicForm.form.form);">
+        </po-button>
+    </div>
+    <div>
+        <div class="loader" [hidden]="isHideLoading">
+            <div class="imgLoader">
+                <img src="../../../../assets/dragon-loading-gif.gif" alt="Loading" style="border-radius: 5%">
+                <div class="textLoader">
+                    <h3>Porfavor aguarde carregar...</h3>
+                </div>
+            </div>
+        </div>
+        <!-- <po-loading-overlay [hidden]="isHideLoading" p-text="Carregando, não deve demorar..."></po-loading-overlay> -->
+    </div>
+</po-container>
